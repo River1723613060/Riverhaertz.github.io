@@ -1,0 +1,78 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.music-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    cursor: pointer;
+    color: #1db954;
+    transition: transform 0.3s;
+}
+
+.music-title:hover {
+    transform: scale(1.05);
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.music-item {
+    background: #282828;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.music-item:hover {
+    transform: translateY(-5px);
+    background: #383838;
+}
+
+.album-cover {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.song-title {
+    font-size: 1rem;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.note {
+    position: fixed;
+    color: #1db954;
+    font-size: 20px;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .music-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
